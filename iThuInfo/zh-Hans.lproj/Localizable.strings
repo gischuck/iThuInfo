@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  iThuInfo
+
+  Created by wenhao on 12-11-30.
+  Copyright (c) 2012年 wenhao. All rights reserved.
+*/
+"App_Name" = "清华大学网关助手";
+"IP_Address" = "IP地址";
+"Current_Usage" = "当前流量";
+"Login_fail" = "登录失败";
+"Login_fail_detail" = "帐号密码错误，请重新设置！";
+"Disconnect" = "断开连接";
+"Disconnect_Success" = "已成功断开连接";
+"Connect_Error" ="连接错误，请稍后重试！";

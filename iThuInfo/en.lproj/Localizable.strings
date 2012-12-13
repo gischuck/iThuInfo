@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  iThuInfo
+
+  Created by wenhao on 12-11-30.
+  Copyright (c) 2012年 wenhao. All rights reserved.
+*/
+"App_Name" = "Thu Info Heler";
+"IP_Address" = "IP Address";
+"Current_Usage" = "Current Usage";
+"Login_fail" = "Login fail";
+"Login_fail_detail" = "UserName/UserPwd is wrong";
+"Disconnect" = "Disconnect";
+"Disconnect_Success" = "Disconnect Success";
+"Connect_Error" ="Connected Error, Please try later!";
