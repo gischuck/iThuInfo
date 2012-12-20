@@ -26,31 +26,7 @@
 	}
 	return self;
 }
-/*
- NSURL* url = [NSURLURLWithString:@"http://aminby.net"];
- NSMutableURLRequest* request = [NSMutableURLRequestnew];
- [requestsetURL:url];
- [requestsetHTTPMethod:@"GET"];
- NSHTTPURLRequest*resp*****e;
- NSData* data = [NSURLConnecti*****endSynchronousRequest:request
- returningResp*****e:&resp*****eerror:nil];
- [NSString* strRet = [[NSString alloc] initWithData:dataencoding:NSUTF8String];
- NSLog(strRet);
-*/
 
-/*
- NSURL* url = [NSURLURLWithString:@"http://aminby.net"];
- NSMutableURLRequest*  request= [NSMutableURLRequestnew];
- [requestsetURL:url];
- [request  setHTTPMethod:@"GET"];
- [request addValue:@"application/json"forHTTPHeaderField:@"Content-Type"];
- [request setHTTPBody:@"someparam"];
- NSHTTPURLRequest*resp*****e;
- NSData* data=  [NSURLConnecti*****endSynchronousRequest:request
- returningResp*****e:&resp*****eerror:nil];
- [NSString* strRet=  [[NSString alloc]initWithData:dataencoding:NSUTF8String];
- NSLog(strRet);
-*/
 - (void)login:(NSString *)userNameRef withPwd:(NSString *)userPwdRef withMethod:(NSInteger)method
 {
     //判断是否已经登录
@@ -85,12 +61,7 @@
         requestTmp = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://m.tsinghua.edu.cn/render.userLayoutRootNode.uP"]
                                       cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                   timeoutInterval:3];
-//        NSData *returnLatin = [NSURLConnection sendSynchronousRequest:requestTmp
-//                                                    returningResponse:nil
-//                                                                error:nil];
-        
-        //NSString *returnString = [[NSString alloc] initWithData:returnLatin encoding:NSUTF8StringEncoding];
-        //[mySharedData setWebViewByData:returnString baseURL:@"http://m.tsinghua.edu.cn/"];
+
         [[[mySharedData webView]mainFrame] loadRequest:requestTmp];
     }
     if (_method == 0 && ([returnStringLatin rangeOfString:@"/cgi-bin/do_login"].length > 0))
@@ -113,12 +84,7 @@
         requestTmp = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://http://portal.tsinghua.edu.cn/render.userLayoutRootNode.uP"]
                                       cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                   timeoutInterval:3];
-//        NSData *returnLatin = [NSURLConnection sendSynchronousRequest:requestTmp
-//                                                    returningResponse:nil
-//                                                                error:nil];
-//        
-//        NSString *returnString = [[NSString alloc] initWithData:returnLatin encoding:NSUTF8StringEncoding];
-//        [mySharedData setInfoWebViewByData:returnString baseURL:@"http://portal.tsinghua.edu.cn/"];
+
         [[[mySharedData infoWebView]mainFrame] loadRequest:requestTmp];
 
     }

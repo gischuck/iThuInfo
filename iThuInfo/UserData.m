@@ -22,10 +22,6 @@
 
 - (void)awakeFromNib
 {
-//    if ([mySharedData userName].length < 1) {
-//        [NSApp beginSheet:userSheet modalForWindow:[mainController mainWindow] modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
-//        
-//    }
 }
 
 -(IBAction)showUserSheet:(id)sender

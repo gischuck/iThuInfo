@@ -66,10 +66,7 @@ static SharedObjects *_sharedInstance;
 {
     [[webView mainFrame]loadHTMLString:value baseURL:[NSURL URLWithString:url]];
 }
-//- (void) setInfoWebViewByData:(NSString *)value baseURL: (NSString *)url
-//{
-//    [[infoWebView mainFrame]loadHTMLString:value baseURL:[NSURL URLWithString:url]];
-//}
+
 - (void) showMsgWin:(NSString *)msg withDetail:(NSString *)detail inWin: (NSWindow *)win
 {
     NSAlert *alert = [[NSAlert alloc] init];
@@ -113,6 +110,7 @@ static SharedObjects *_sharedInstance;
 }
 
 -(void) getIPAddress{
+    
     NSArray *addresses = [[NSHost currentHost] addresses];
     
     for (NSString *anAddress in addresses) {

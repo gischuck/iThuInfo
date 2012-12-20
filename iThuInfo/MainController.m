@@ -39,10 +39,7 @@
     [mySharedData setSettings:[self settingsSheet]];
     NSString *ip = [[NSString alloc]initWithFormat:@"%@:%@",NSLocalizedString(@"IP_Address", "IP Address"),[mySharedData ipAddress]];
     [[self ipAddressField]setStringValue:ip];
-    
-//    if ([mySharedData userName].length < 1) {
-//        [NSApp beginSheet:[self settingsSheet] modalForWindow:[self mainWindow] modalDelegate:self didEndSelector:NULL contextInfo:NULL];
-//    }
+
 }
 
 - (void)dealloc
@@ -67,13 +64,8 @@
     if (isInNewWin) {
  
     }
-    /*可行的js
-     "var script = document.createElement('script'); "
-     " script.type = 'text/javascript'; $(document).ready(function(){$(\"a.btn_close\").toggle();});"
-    */
     isInNewWin = NO;
-    
-    //[[self exWebViewer] stringByEvaluatingJavaScriptFromString: @"myFun();"];
+
     [[self exWinprogressIndicator] stopAnimation:self];
     [[self mainWinprogressIndicator] stopAnimation:self];
     [[self webinfoProgressbar] stopAnimation:self];
@@ -86,18 +78,6 @@
     [[self webinfoProgressbar] startAnimation:self];
 }
 
-//- (void)webView:(WebView *)webView
-//decidePolicyForNavigationAction:(NSDictionary *)actionInformation
-//        request:(NSURLRequest *)request frame:(WebFrame *)frame
-//decisionListener:(id < WebPolicyDecisionListener >)listener
-//{
-//    NSString *host = [[request URL] host];
-//    if (host) {
-//        [[NSWorkspace sharedWorkspace] openURL:[request URL]];
-//    } else {
-//        [listener use];
-//    }
-//}
 
 - (WebView *)webView:(WebView *)sender createWebViewWithRequest:(NSURLRequest *)request
 {
@@ -110,9 +90,6 @@
     }
     else if (activeWebView == [self infoWebView]) {
         newWebView = [self infoWebView];
-//        isInNewWin = YES;
-//        [NSApp beginSheet:[self exWebWindow] modalForWindow:[self mainWindow] modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
-        
     }
 
     
@@ -124,7 +101,6 @@
 {
     [NSApp endSheet:[self exWebWindow]];
     [[self exWebWindow] orderOut:sender];
-    //[self.exWebViewer.preferences setJavaScriptEnabled:YES];
 }
 
 
